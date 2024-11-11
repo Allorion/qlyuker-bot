@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  account_1:
+    build: .
+    env_file:
+      - .env
+    environment:
+      - INIT_DATA=${ACCOUNT_1_INIT_DATA}
+    container_name: account_1
+    volumes:
+      - .:/app
+
+  account_2:
+    build: .
+    env_file:
+      - .env
+    environment:
+      - INIT_DATA=${ACCOUNT_2_INIT_DATA}
+    container_name: account_2
+    volumes:
+      - .:/app
